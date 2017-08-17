@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<!--wyśrodkowanie jednego DIVa w drugim DIVie-->
+
+    <div id="container">
+        <div class="square">
+        </div>
+    </div>
+    <br>
+<!--przycisk-->
+    <a href class="cicle-button"><i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i></a>
+
+    <br/>
+<!--    gradient-->
+    <div id="gradient"></div>
+<!--video-->
+    <video width="400" controls>
+  <source src="mp4/mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+</video>
+
+
+    <!--Ikona Font Awesome jako znacznik listy-->
+
+    <ul class="fa-ul">
+        <li><i class="fa-li fa fa-camera-retro"></i>mleko</li>
+        <li><i class="fa-li fa fa-camera-retro"></i>jajka</li>
+        <li><i class="fa-li fa fa-camera-retro"></i>masło</li>
+        <li><i class="fa-li fa fa-camera-retro"></i>jabłka</li>
+    </ul>
+<!--    zmiana koloru placeholdera-->
+    <form action="" method="post">
+        <input type="text" name="imie" placeholder="Imię"><br>
+        <input type="text" name="nazwisko" placeholder="Nazwisko"><br>
+        <input type="submit" value="Submit">
+    </form>
+<!--serce-->
+    <div id="heart">
+        <img class="bottom" src="https://goo.gl/nN8Haf" width="100px">
+        <img class="top" src="https://goo.gl/IIW1KE" width="100px">
+    </div>
+
+    <div id="serce"> Heart </div>
+
+    <!--7.nadanie innego kolory do linku, który słuzy do pobiernia plików-->
+
+    <a href="files/Kochanowski.doc" download>Fraszka "Na zdrowie"</a>
+    <br>
+    <!--znacznik cytatu-->
+    <div>
+        <q lang="pl">tekst polski</q><br>
+        <q lang="en">tekst angielski </q><br>
+    </div>
+
+    <div>
+        <blocquote lang="pl">tekst polski</blocquote><br>
+        <blocquote lang="en">tekst angielski</blocquote>
+    </div>
+    <br>
+    <br>
+
+<!--Powiększanie zdjęcia w tle po najechaniu myszką-->
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <br>
+<!--kurtyna-->
+    <div class="curtain">
+        <div class="curtain__wrapper">
+            <input type="checkbox" checked>
+            <div class="curtain__panel curtain__panel--left">
+            </div>
+            <div class="curtain__prize">
+            </div>
+            <div class="curtain__panel curtain__panel--right">
+            </div>
+        </div>
+    </div>
+
+    <!--Parallaxa effect-->
+  
+
+    <div class="parallax"></div>
+    <div style=height:500px;> </div>
+
+    <br>
+
+    <!--Dwustronny box odwracający się po najechaniu myszką-->
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <div class="front">
+
+            </div>
+            <div class="back">
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <br>
+
+    <!--
+Sekcja podzielona na cztery kolumny z tłem – każda kolumna rozsuwa się po
+najechaniu zwężając pozostałe
+-->
+
+
+
+    <section id="wszystkie">
+       <div class="kolumny" id="1"></div>
+         <div class="kolumny" id="2"></div>
+         <div class="kolumny" id="3"></div>
+         <div class="kolumny" id="4"></div>
+    </section>
+
+
+
+
+    <!--Animowany preloader-->
+    <p>Animowany preloader</p>
+    <div class="loader"></div>
+
+
+
+    <br>
+
+
+
+
+    <!--   stopka strony-->
+    <footer>
+        <p class="copyright"> Copyright &copy; Karolina Haręcka-Gałka</p>
+    </footer>
+
+</body>
+
+</html>

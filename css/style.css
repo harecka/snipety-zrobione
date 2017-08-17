@@ -1,0 +1,400 @@
+    body {
+        background-color: aqua;
+    }
+/*    wyśrodkowanie jednego DIVa w drugim DIVie*/
+    #container {
+        position: relative;
+        height: 300px;
+        width: 300px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .square {
+        position: absolute;
+        height: 120px;
+        width: 120px;
+        background-color: blueviolet;
+    }
+/*   przycisk */
+    .cicle-button {
+        position: relative;
+        color: black;
+        background-color: pink;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cicle-button .i {
+        position: relative;
+        color: inherit;
+        line-height: inherit;
+        text-decoration: none;
+    }
+    
+    .cicle-button:hover {
+        color: fuchsia;
+        transition: all .3s linear;
+    }
+/*   gradient */
+    #gradient {
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to left, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3);
+    }
+/* video   */
+    video {
+        width: 100%;
+        height: auto;
+    }
+/*    zmiana koloru placeholdera*/
+    input::placeholder {
+        color: orange;
+        opacity: 1;
+    }
+/*serce*/
+    
+    #button {
+        width: 450px;
+        height: 450px;
+        position: relative;
+        top: 48px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    #heart img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        -webkit-transition: opacity 7s ease-in-out;
+        -moz-transition: opacity 7s ease-in-out;
+        -o-transition: opacity 7s ease-in-out;
+        transition: opacity 7s ease-in-out;
+    }
+    
+    @keyframes heartFadeInOut {
+        0% {
+            opacity: 1;
+        }
+        14% {
+            opacity: 1;
+        }
+        28% {
+            opacity: 0;
+        }
+        42% {
+            opacity: 0;
+        }
+        70% {
+            opacity: 0;
+        }
+    }
+    
+    #heart img.top {
+        animation-name: heartFadeInOut;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-direction: alternate;
+    }
+    
+    @keyframes heartbeat {
+        0% {
+            transform: scale( .75);
+        }
+        20% {
+            transform: scale( 1);
+        }
+        40% {
+            transform: scale( .75);
+        }
+        60% {
+            transform: scale( 1);
+        }
+        80% {
+            transform: scale( .75);
+        }
+        100% {
+            transform: scale( .75);
+        }
+    }
+    
+    #serce {
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        animation: heartbeat 1s infinite;
+    }
+    
+    a:link {
+        color: deeppink;
+    }
+    /*znacznik cytatu*/
+    
+    q:lang(en) {
+        quotes: "*" "*";
+    }
+    
+    q:before {
+        content: open-quote;
+    }
+    
+    q:after {
+        content: close-quote;
+    }
+    
+    blocquote:lang(en) {
+        quotes: "*" "*";
+    }
+    
+    blocquote:before {
+        content: open-quote;
+    }
+    
+    blocquote:after {
+        content: close-quote;
+    }
+/*Powiększanie zdjęcia w tle po najechaniu myszką*/
+    .parent {
+        width: 300px;
+        height: 200px;
+    }
+    
+    .child {
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/jamajka.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .parent:hover .child,
+    .parent:focus .child {
+        transform: scale(1.3);
+        transition: linear all .5s;
+    }
+    
+    .child::before {
+        content: "";
+        display: none;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(99, 88, 186, 0.5);
+    }
+    
+    .parent:hover .child:before,
+    .parent:focus .child:before {
+        display: block;
+    }
+/*    kurtyna*/
+    .curtain {
+        width: 100%;
+        /* Ensures the component is the full screen width */
+        height: 100vh;
+        /* We're using this for demo purposes */
+        overflow: hidden;
+        /* Allows us to slide the panels outside the container without them showing */
+    }
+    
+    .curtain__wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    
+    input[type=checkbox] {
+        position: absolute;
+        /* Force the checkbox at the start of the container */
+        cursor: pointer;
+        /* Indicate the curtain is clickable */
+        width: 100%;
+        /* The checkbox is as wide as the component */
+        height: 100%;
+        /* The checkbox is as tall as the component */
+        z-index: 100;
+        /* Make sure the checkbox is on top of everything else */
+        opacity: 0;
+        /* Hide the checkbox */
+    }
+    
+    .curtain__panel {
+        background: orange;
+        width: 50%;
+        height: 100vh;
+        float: left;
+        position: relative;
+        z-index: 2;
+        transition: all 1s ease-out;
+    }
+    
+    .curtain__panel--left {
+        transform: translateX(-100%);
+    }
+    
+    .curtain__panel--right {
+        transform: translateX(100%);
+    }
+    
+    .curtain__prize {
+        background-image: url(../img/jamajka.jpg);
+        background-size: cover;
+        position: absolute;
+        /* Forces the prize position into the container start */
+        z-index: 1;
+        /* Places the prize behind the panels, which are z-index 2 */
+        width: 100%;
+        height: 100%;
+    }
+    
+    input[type=checkbox]:checked~div.curtain__panel--left {
+        transform: translateX(0);
+    }
+    
+    input[type=checkbox]:checked~div.curtain__panel--right {
+        transform: translateX(0);
+    }
+    /*parallaxa effect*/
+    
+    .parallax {
+        background-image: url(../img/komp.jpg);
+        height: 200px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    style {
+        height: 400px;
+        background-color: red;
+        font-size: 36px;
+    }
+    /*Dwustronny box odwracający się po najechaniu myszką*/
+    
+    .flip-container {
+        perspective: 1000px;
+    }
+    
+    .flip-container:hover .flipper,
+    .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-container,
+    .front,
+    .back {
+        width: 260px;
+        height: 380px;
+    }
+    
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+    
+    .front,
+    .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .front {
+        background-image: url(../img/slon.jpg);
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    
+    .back {
+        background-image: url(../img/images.jpg);
+        transform: rotateY(180deg);
+    }
+    /*Sekcja podzielona na cztery kolumny z tłem – każda kolumna rozsuwa się po
+najechaniu zwężając pozostałe*/
+/*mi to nie wychodzi*/
+#wszystkie {  
+    position: relative;
+        background: white;
+        width: 100%;
+        height: 100px;
+        font-size: 0;
+    }
+    
+    .kolumny {
+        width: 25%;
+        height: 120px;
+        display: inline-block;
+        transition: all 1s linear;
+    }
+    
+    #1 {
+        background: yellow;
+       position: absolute;
+        left: 0;
+    }
+    
+    #2 {
+        background: red;
+        position: absolute;
+        left: 25%;
+         
+    }
+    
+    #3 {
+        background: green;
+        position: absolute;
+        
+    }
+    
+    #4 {
+        background: blue;
+        position: absolute;
+       
+    }
+/*    mi to nie wychodzi*/
+   
+    /*Animowany preloader*/
+    
+    .loader {
+        border-bottom: 16px solid #FF1493;
+        border-top: 16px solid #FF69B4;
+        border-right: 16px solid #9400D3;
+        border-left: 16px solid #BA55D3;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: bufor 2s linear infinite;
+    }
+    
+    @keyframes bufor {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    /*footer*/
+    
+    footer {
+        background-color: #142634;
+        position: fixed;
+        color: #fff;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        line-height: 10px;
+    }
